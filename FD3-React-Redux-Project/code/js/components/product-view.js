@@ -4,6 +4,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import appData from '../../../appData';
+
 import '../../less/product-view.less';
 
 class ProductView extends React.Component {
@@ -21,41 +23,43 @@ class ProductView extends React.Component {
         select: PropTypes.number
     }
     render() {
+        let productCode = parseInt(this.props.match.params.clid);
+        let product = appData.products.find(c => c.code == productCode);
         return (
             <div className='main-product-wrapper'>
                 <main>
                     <div className='product-container'>
                         <div className='product-wrapper'>
                             <div className='cell'>
-                                <img alt='lenovo' src={this.props.data.url} />
+                                <img alt='lenovo' src={product.url} />
                             </div>
                             <div className='cell'>
                                 <div className='product-head'>
-                                    <h4 className='product-name' >{this.props.data.name}</h4>
+                                    <h4 className='product-name' >{product.name}</h4>
                                 </div>
                                 <div className='product-body'>
                                     <p className='product-description'>
-                                        <span>{this.props.data.description}</span>
+                                        <span>{product.description}</span>
                                     </p>
                                     <p className='product-specifications'>
-                                        {this.props.data.specifications}
+                                        {product.specifications}
                                     </p>
                                 </div>
                                 <div className='product-footer'>
                                     <h4 className='product-count'>
                                         <span className='bold'>Цена: </span>
-                                        <span>{this.props.data.count}</span>
+                                        <span>{product.count}</span>
                                         <span>$</span>
                                     </h4>
                                     <p className='product-remainder'>
                                         <span className='bold'>Осталось на складе: </span>
-                                        <span>{this.props.data.remainder}</span>
+                                        <span>{product.remainder}</span>
                                     </p>
                                 </div>
-                                <div className='product-buttons'>
-                                    <button className='button btn' onClick={this.addCart}>В корзину</button>
-                                </div>
                             </div>
+                        </div>
+                        <div className='product-buttons-view'>
+                            <button className='button btn' onClick={this.addCart}>В корзину</button>
                         </div>
                     </div>
                 </main>

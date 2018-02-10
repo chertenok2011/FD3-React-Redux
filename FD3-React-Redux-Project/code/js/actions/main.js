@@ -1,13 +1,5 @@
 "use strict";
 
-const selectProduct = (code) => {
-    // console.log('product ' + product.code);
-    return {
-        type: 'SELECT_PRODUCT',
-        id: code
-    }
-};
-
 const filterProduct = (filter) => {
     // console.log('filter ' + filter);
     return {
@@ -15,13 +7,6 @@ const filterProduct = (filter) => {
         filterText: filter 
     }
 };
-
-const pageSelect = (page) => {
-    return {
-        type: 'PAGE_SELECT',
-        page: page
-    }
-}
 
 const addProductCard = (product) => {
     return {
@@ -31,5 +16,5 @@ const addProductCard = (product) => {
 }
 
 export {
-    selectProduct, filterProduct, pageSelect, addProductCard
+    filterProduct, addProductCard
 }
