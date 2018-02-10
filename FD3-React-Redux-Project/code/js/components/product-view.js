@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import appData from '../../../appData';
@@ -59,7 +60,7 @@ class ProductView extends React.Component {
                             </div>
                         </div>
                         <div className='product-buttons-view'>
-                            <button className='button btn' onClick={this.addCart}>В корзину</button>
+                            <NavLink to="/" className='button btn'>Назад</NavLink>
                         </div>
                     </div>
                 </main>
