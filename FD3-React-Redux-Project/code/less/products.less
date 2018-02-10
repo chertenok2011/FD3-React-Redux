@@ -1,0 +1,46 @@
+.products-row {
+    text-align: center;
+    padding-top: 20px;
+    
+    .item-body {
+        position: relative;
+        display: table;
+        width: 100%;
+        border: 1px solid #ccc;
+        margin: 0 0 -1px 0;
+        
+        .item-section {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px;
+            
+            p {
+                .bold {
+                    font-weight: bold;
+                }
+
+                &.product-name {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+            }   
+            
+            .button-section {
+                padding: 5px 0;
+                
+                button {
+                    display: inline-block;
+
+                    &:first-child {
+                        margin-right: 5px;
+                    }                            
+                }
+            }
+        }
+    }       
+}
+
+.button-new {
+    padding: 15px 0;
+}
